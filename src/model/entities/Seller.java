@@ -1,8 +1,10 @@
 package model.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Seller {
+public class Seller implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private Integer Id;
 	private String name;
@@ -60,11 +62,47 @@ public class Seller {
 		this.baseSalary = baseSalary;
 	}
 	
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Seller other = (Seller) obj;
+		if (Id == null) {
+			if (other.Id != null)
+				return false;
+		} else if (!Id.equals(other.Id))
+			return false;
+		return true;
+	}
+
 	@Override
 	public String toString() {
-		return "Id = " + Id + ", name = " + name + ", email = " + email + ", birthday = " + birthday + ", baseSalary = "
-				+ baseSalary;
+		return "Seller [Id=" + Id + ", name=" + name + ", email=" + email + ", birthday=" + birthday + ", baseSalary="
+				+ baseSalary + ", department=" + department + "]";
 	}
+
 	
 	
 
