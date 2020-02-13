@@ -35,9 +35,16 @@ public class Program {
 		System.out.println("NEW SELLER, new id is: " + sel.getId());
 
 		System.out.println("\n===========================\n");
+		//test update
 		Seller sel2 = new Seller(7, "claudio", "claudio@outlook.com", sdf.parse("21/10/2000"), 1800.00,
 				new Department(1, null));
 		sellerDao.update(sel2);
+		System.out.println("update succesfull");
+		
+		System.out.println("\n===========================\n");
+		//test delete
+		sellerDao.deleteById(7);
+		System.out.println("seller deleted");
 	}
 
 }
