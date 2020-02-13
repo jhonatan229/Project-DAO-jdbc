@@ -6,7 +6,7 @@ import model.dao.DepartmentDao;
 import model.entities.Department;
 
 public class DepartmentDaoJDBC implements DepartmentDao {
-
+	
 	@Override
 	public void insert(Department obj) {
 	}
@@ -21,7 +21,8 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
 	@Override
 	public Department searchById(Integer id) {
-		return null;
+        return null;
+            
 	}
 
 	@Override
