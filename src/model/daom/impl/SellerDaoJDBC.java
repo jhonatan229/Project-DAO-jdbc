@@ -13,11 +13,11 @@ import java.util.Map;
 
 import db.DB;
 import db.DbException;
-import model.dao.SellerDao;
+import model.dao.ImplementDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-public class SellerDaoJDBC implements SellerDao {
+public class SellerDaoJDBC implements ImplementDao {
 
 	private Connection conn;
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -119,7 +119,6 @@ public class SellerDaoJDBC implements SellerDao {
 
 	}
 
-	@Override
 	public Seller searchById(Integer id) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -148,7 +147,6 @@ public class SellerDaoJDBC implements SellerDao {
 		}
 	}
 
-	@Override
 	public List<Seller> findAll() {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -183,7 +181,6 @@ public class SellerDaoJDBC implements SellerDao {
 		return list;
 	}
 	
-	@Override
 	public List<Seller> searchByDepartment(Department department) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -218,14 +215,6 @@ public class SellerDaoJDBC implements SellerDao {
 			DB.closeStatement(ps);
 		}
 		return list;
-	}
-
-	
-	public Department instantiateDepartment(ResultSet rs) throws SQLException {
-		Department dep = new Department();
-		dep.setId(rs.getInt("DepartmentId"));
-		dep.setName(rs.getString("DepName"));
-		return dep;
 	}
 	
 	public Seller instantiateSeller (ResultSet rs, Department dep) throws SQLException {

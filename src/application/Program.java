@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import model.dao.DaoFactory;
-import model.dao.SellerDao;
+import model.daom.impl.SellerDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -13,11 +13,11 @@ public class Program {
 
 	public static void main(String[] args) throws ParseException {
 
-		SellerDao sellerDao = DaoFactory.createdSellerDao();
+		SellerDaoJDBC sellerDao = (SellerDaoJDBC) DaoFactory.createdSellerDao();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		// TEST searchabyDepartment
-		List<Seller> seller = sellerDao.searchByDepartment(new Department(1, "Computers"));
+		List<Seller> seller = ((SellerDaoJDBC) sellerDao).searchByDepartment(new Department(1, "Computers"));
 
 		seller.forEach(System.out::println);
 
