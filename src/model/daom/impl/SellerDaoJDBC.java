@@ -26,7 +26,7 @@ public class SellerDaoJDBC implements ImplementDao {
 		this.conn = conn;
 	}
 
-	@Override
+
 	public void insert(Seller obj) {	
 	    PreparedStatement st = null;
 
@@ -68,7 +68,7 @@ public class SellerDaoJDBC implements ImplementDao {
 		}
 	}
 
-	@Override
+
 	public void update(Seller obj) {
 		 PreparedStatement st = null;
 
