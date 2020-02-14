@@ -89,7 +89,21 @@ public class DepartmentDaoJDBC implements ImplementDao{
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
+		PreparedStatement ps = null;
+		
+		try {
+			ps = conn.prepareStatement("DELETE FROM department "+
+					"WHERE Id = ?",
+					 + Statement.RETURN_GENERATED_KEYS);
+			
+			ps.setInt(1, id);
+			
+			ps.executeUpdate();
+		}
+		catch(SQLException e ) {
+			throw new DbException(e.getMessage());
+		}
+		
 		
 	}
 
