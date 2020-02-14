@@ -1,0 +1,8 @@
+
+Precido que, em ordem, esqueva as seguintes informaçoes para mudarmos (mesmo que 
+nao mude alguma imoçao, reescreva):
+Id 
+nome
+data de nascimento
+base salarial
+numero do departamento 

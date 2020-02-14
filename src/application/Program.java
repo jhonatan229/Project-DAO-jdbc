@@ -1,50 +1,43 @@
 package application;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.daom.impl.SellerDaoJDBC;
-import model.entities.Department;
 import model.entities.Seller;
+import model.util.Decisions;
+import model.util.ReadText;
 
 public class Program {
 
 	public static void main(String[] args) throws ParseException {
 
-		SellerDaoJDBC sellerDao = (SellerDaoJDBC) DaoFactory.createdSellerDao();
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-		// TEST searchabyDepartment
-		List<Seller> seller = ((SellerDaoJDBC) sellerDao).searchByDepartment(new Department(1, "Computers"));
-
-		seller.forEach(System.out::println);
-
-		System.out.println("\n===========================\n");
-		// TEST searchabyDepartment
-		List<Seller> seller2 = sellerDao.findAll();
-
-		seller2.forEach(System.out::println);
-
-		System.out.println("\n===========================\n");
-		// test insert seller
-		Seller sel = new Seller(null, "maria", "jhonatan@outlook.com", sdf.parse("21/05/2000"), 2700.00,
-				new Department(2, null));
-		sellerDao.insert(sel);
-		System.out.println("NEW SELLER, new id is: " + sel.getId());
-
-		System.out.println("\n===========================\n");
-		//test update
-		Seller sel2 = new Seller(7, "claudio", "claudio@outlook.com", sdf.parse("21/10/2000"), 1800.00,
-				new Department(1, null));
-		sellerDao.update(sel2);
-		System.out.println("update succesfull");
+		File file = new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\options.txt");
+		SellerDaoJDBC sellerDao = (SellerDaoJDBC)DaoFactory.createdSellerDao();
 		
-		System.out.println("\n===========================\n");
-		//test delete
-		sellerDao.deleteById(7);
-		System.out.println("seller deleted");
+		System.out.println(ReadText.readerAText(file));
+		
+		int awnser = sc.nextInt();
+		
+		System.out.println(Decisions.awnserForFirstQestion(awnser));
+		
+		if(awnser == 4) {
+			List<Seller> seller2 = sellerDao.findAll();
+			seller2.forEach(System.out::println);
+		}
+		
+		
+		
+		
+		sc.close();
 	}
 
 }

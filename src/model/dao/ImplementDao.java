@@ -11,7 +11,7 @@ public interface ImplementDao {
 	
 	default Department instantiateDepartment(ResultSet rs) throws SQLException {
 		Department dep = new Department();
-		dep.setId(rs.getInt("depa"));
+		dep.setId(rs.getInt("DepartmentId"));
 		dep.setName(rs.getString("depName"));
 		return dep;
 	}
