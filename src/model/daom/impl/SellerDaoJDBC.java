@@ -155,7 +155,7 @@ public class SellerDaoJDBC implements ImplementDao {
 			ps = conn.prepareStatement("SELECT seller.*,department.Name as DepName " + 
         			"FROM seller INNER JOIN department " + 
         			"ON seller.DepartmentId = department.Id " 
-                    + "ORDER BY Name");
+                    + "ORDER BY Id");
 			
 			rs = ps.executeQuery();
 			Map<Integer, Department> map = new HashMap<>();

@@ -62,6 +62,10 @@ public class Department implements Serializable {
 		return "Department id = " + Id + " \nname of deparment = " + name  + "\n=====================\n";
 	}
 	
+	public String showList() {
+		return Id + " = " + name ;
+	}
+	
 	
 
 }

@@ -1,8 +1,4 @@
 
-Precido que, em ordem, esqueva as seguintes informaçoes para mudarmos (mesmo que 
-nao mude alguma imoçao, reescreva):
-Id 
-nome
-data de nascimento
-base salarial
-numero do departamento 
+oque deseja fazer ?
+1 - alterar um vendedor existente
+2 - deletar um vendedor pelo id 

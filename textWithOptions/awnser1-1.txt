@@ -1,0 +1,9 @@
+
+Por favor, informe, na ordem:
+nome
+email
+data de nascimento
+base salaria
+Numero do departamento
+
+departamentos existentes:
