@@ -1,5 +1,6 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
@@ -31,10 +32,11 @@ public class ProgramForDepartment {
 	    //test search
 		System.out.println("what department do you want search? ");
 	    int id = sc.nextInt();
-	    
-	    
 	    System.out.println(departmentDao.searchById(id));
-	    
+	 
+	    //test list with all departments 
+	    List<Department> depart = departmentDao.findAll();
+	    depart.forEach(System.out::println);
 	    
 		sc.close();
 
