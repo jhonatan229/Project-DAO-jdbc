@@ -28,7 +28,14 @@ public class ProgramForDepartment {
 		departmentDao.insert(dep);
 		System.out.println("insert succesful" );
 		
-		
+	    //test search
+		System.out.println("what department do you want search? ");
+	    int id = sc.nextInt();
+	    
+	    
+	    System.out.println(departmentDao.searchById(id));
+	    
+	    
 		sc.close();
 
 	}
