@@ -11,7 +11,6 @@ import db.DB;
 import db.DbException;
 import model.dao.ImplementDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class DepartmentDaoJDBC implements ImplementDao{
 
@@ -61,8 +60,30 @@ public class DepartmentDaoJDBC implements ImplementDao{
 		
 	}
 
-	public void update(Seller obj) {
-		// TODO Auto-generated method stub
+	public void update(Department obj) {
+		PreparedStatement ps = null;
+		
+		try {
+			ps = conn.prepareStatement("UPDATE department "+
+					"SET Name = ? "
+					+"WHERE Id = ?",
+					 + Statement.RETURN_GENERATED_KEYS);
+			
+			ps.setString(1, obj.getName());
+			ps.setInt(2, obj.getId());
+			
+			int result = ps.executeUpdate();
+			
+		    if (result < 0 ) {
+		    	throw new DbException("non department was updated!");
+		    }
+		}
+		catch(SQLException e ) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(ps);
+		}
 		
 	}
 
