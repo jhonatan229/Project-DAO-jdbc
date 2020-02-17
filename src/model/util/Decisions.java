@@ -26,7 +26,7 @@ public class Decisions {
 	}
 
 	public static String awnserForSecondLayer(int x) {
-		if (x < 3 && x > 0) {
+		if (x <= 3 && x > 0) {
 			if (x == 1) {
 				return ReadText.readerAText(
 						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser1-1.txt"));
@@ -37,6 +37,21 @@ public class Decisions {
 		} else {
 			throw new DbException("awnser is not accept: ");
 		}
+	}
+	
+	public static String AwnserForThirdLayer(int x) {
+		if (x <= 3 && x > 0) {
+			if (x == 1) {
+				return ReadText.readerAText(
+						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser2-1.txt"));
+			} else {
+				return ReadText.readerAText(
+						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser2-2.txt"));
+			}
+		} else {
+			throw new DbException("awnser is not accept: ");
+		}
+	
 	}
 
 }

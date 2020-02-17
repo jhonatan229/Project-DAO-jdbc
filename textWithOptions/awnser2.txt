@@ -1,4 +1,5 @@
 
 oque deseja fazer ?
-1 - alterar um vendedor existente
-2 - deletar um vendedor pelo id 
+1 - alterar um vendedor existente;
+2 - deletar um vendedor pelo id;
+3 - voltar para o menu principal;
