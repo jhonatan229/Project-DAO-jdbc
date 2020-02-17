@@ -30,9 +30,12 @@ public class Decisions {
 			if (x == 1) {
 				return ReadText.readerAText(
 						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser1-1.txt"));
-			} else {
+			} else if(x == 2){
 				return ReadText.readerAText(
 						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser1-2.txt"));
+			}
+			else {
+				return null;
 			}
 		} else {
 			throw new DbException("awnser is not accept: ");
@@ -44,9 +47,12 @@ public class Decisions {
 			if (x == 1) {
 				return ReadText.readerAText(
 						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser2-1.txt"));
-			} else {
+			} else if(x == 2) {
 				return ReadText.readerAText(
 						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser2-2.txt"));
+			}
+			else {
+				return null;
 			}
 		} else {
 			throw new DbException("awnser is not accept: ");

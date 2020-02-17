@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-import com.mysql.jdbc.jdbc2.optional.SuspendableXAConnection;
-
 import model.dao.DaoFactory;
 import model.daom.impl.DepartmentDaoJDBC;
 import model.daom.impl.SellerDaoJDBC;
@@ -106,11 +104,24 @@ public class Program {
 					continue;
 				}
 			}
+			if(awnser == 3) {
+				ReadText.readerAText(new File ("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser3-1.txt"));	
+				System.out.print("id: ");
+				int id = sc.nextInt();
+				System.out.print("nome do departamento: ");
+				sc.nextLine();
+				String namDepartment = sc.nextLine();
+				Department dep = new Department(id, namDepartment);
+				departmentDao.update(dep);
+				System.out.println("nome do departamento adicionado com sucesso!");
+			}
 
 			if (awnser == 4) {
 				List<Seller> seller2 = sellerDao.findAll();
 				seller2.forEach(System.out::println);
+				
 			}
+			
 
 		}
 

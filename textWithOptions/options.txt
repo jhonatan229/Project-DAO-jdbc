@@ -2,7 +2,7 @@ Wellcome to database KarksMobli!
 
 what our services can to do for you?
 
-1 - deseja incluir algum vendedor/setor em nossos bancos de dados ? 
+1 - deseja incluir algum vendedor/departamento em nossos bancos de dados ? 
 2 - deseja alterar algum vendedor ?
-3 - deseja alterar um nome de algum setor?
+3 - deseja alterar um nome de algum departamento?
 4 - deseja ver a lista com todos os vendedores?
