@@ -27,12 +27,11 @@ public class Program {
 		SellerDaoJDBC sellerDao = (SellerDaoJDBC) DaoFactory.createdSellerDao();
 		DepartmentDaoJDBC departmentDao = (DepartmentDaoJDBC) DaoFactory.createdDepartmentDao();
 
-		int control = 5;
-		while (control == 5) {
+		int backToMenu = 'y';
+		while (backToMenu == 'y' || backToMenu == 'Y') {
+			
 			System.out.println(ReadText.readerAText(file));
-
 			int awnser = sc.nextInt();
-
 			System.out.println(Decisions.awnserForFirstLayer(awnser));
 
 			if (awnser == 1) {
@@ -70,7 +69,7 @@ public class Program {
 					departmentDao.insert(dep);
 
 				} else {
-
+                    ClearScreen();
 					continue;
 				}
 			}
@@ -101,11 +100,11 @@ public class Program {
 					System.out.println("vendedor apagado com sucesso!");
 				}
 				else {
+					ClearScreen();
 					continue;
 				}
 			}
 			if(awnser == 3) {
-				ReadText.readerAText(new File ("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser3-1.txt"));	
 				System.out.print("id: ");
 				int id = sc.nextInt();
 				System.out.print("nome do departamento: ");
@@ -121,11 +120,17 @@ public class Program {
 				seller2.forEach(System.out::println);
 				
 			}
-			
-
+			System.out.println("voce quer voltar para o menu? (y/n)");
+			backToMenu = sc.next().charAt(0);
+			ClearScreen();
 		}
 
 		sc.close();
+	}
+	
+	public static void ClearScreen() {
+		System.out.println("\033[H\033[2J");
+		System.out.flush();
 	}
 
 }

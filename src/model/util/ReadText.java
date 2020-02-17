@@ -8,18 +8,22 @@ import java.io.IOException;
 public class ReadText {
 	
 	public static String readerAText(File file) {
-		
+		String line = null;
 		try(BufferedReader br = new BufferedReader(new FileReader(file))) {
-		     String line = br.readLine();
+		    line = br.readLine();
 			while(line != null) {
 				System.out.println(line);
 				line = br.readLine();
 			}
-			return line;
 		}
 		catch(IOException e ) {
 			System.out.println("error in readed file " + e.getMessage());
-			return null;
+		}
+		if(line == null) {
+			return " ";
+		}
+		else {
+			return line;
 		}
 	}
 }

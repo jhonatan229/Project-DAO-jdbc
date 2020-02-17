@@ -16,7 +16,7 @@ public class Decisions {
 						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser2.txt"));
 			} else if (x == 3) {
 				return ReadText.readerAText(
-						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser3.txt"));
+						new File("C:\\projeto-java\\Project-jdbc\\Project-DAO\\textWithOptions\\awnser3-1.txt"));
 			} else {
 				return "List of seller:";
 			}
